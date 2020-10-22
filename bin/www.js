@@ -6,6 +6,9 @@
 import http from 'http';
 import debug from 'debug';
 import app from '../app.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 debug('server:server');
 

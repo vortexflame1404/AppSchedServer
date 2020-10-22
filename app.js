@@ -2,10 +2,11 @@ import express from 'express';
 import http from 'http';
 import errorHandler from 'errorhandler';
 import morgan from 'morgan';
+import dotenv from 'dotenv';
+import helmet from 'helmet';
 import db from './db/db.js';
 import Users from './models/Users.js';
 import routes from './routes/index.js';
-import dotenv from 'dotenv';
 
 dotenv.config();
 const port = process.env.PORT;
@@ -22,6 +23,7 @@ const app = express();
 
 // Configure our app
 app.use(morgan('dev'));
+app.use(helmet());
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
