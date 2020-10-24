@@ -2,13 +2,10 @@ import express from 'express';
 import http from 'http';
 import errorHandler from 'errorhandler';
 import morgan from 'morgan';
-import dotenv from 'dotenv';
 import helmet from 'helmet';
 import db from './db/db.js';
-import Users from './models/Users.js';
 import routes from './routes/index.js';
 
-dotenv.config();
 const port = process.env.PORT;
 
 // Configure mongoose's promise to global promise

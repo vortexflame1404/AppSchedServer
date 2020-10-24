@@ -7,8 +7,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "npm run serverstart",
-    "devstart": "nodemon app.js",
+    "start": "node -r dotenv/config app.js",
+    "devstart": "nodemon -r dotenv/config app.js",
     "lint": "eslint",
     "serverstart": "SET DEBUG=Server:* & env-cmd -f .env npm run devstart"
   },
